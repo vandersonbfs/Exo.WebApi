@@ -83,9 +83,8 @@ return NotFound();
 return Ok(usuario);
 }
 // put -> /api/usuarios/{id}
-[Authorize]
-[HttpDelete("{id}")]
 // Atualiza.
+[Authorize]
 [HttpPut("{id}")]
 
 public IActionResult Atualizar(int id, Usuario usuario)
@@ -95,7 +94,6 @@ return StatusCode(204);
 }
 // delete -> /api/usuarios/{id}
 [Authorize]
-[HttpPut("{id}")]
 [HttpDelete("{id}")]
 public IActionResult Deletar(int id)
 
